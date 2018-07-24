@@ -41,6 +41,8 @@ public class AjusteFragment extends Fragment implements View.OnClickListener{
                 try{
                     //Manda comando para ajustar el offset
                     ((MainActivity)getActivity()).sendOffset();
+                    ((MainActivity)getActivity()).showToast("Offset Configurado");
+
                 }catch (Exception e){
                     System.out.println("Error: " + e);
                 }
@@ -49,6 +51,8 @@ public class AjusteFragment extends Fragment implements View.OnClickListener{
                 try{
                     if(etVoltaje.getText() != null){
                         ((MainActivity)getActivity()).sendVoltaje(etVoltaje.getText().toString());
+                        ((MainActivity)getActivity()).showToast("Voltaje Configurado");
+
                     }else{
                         ((MainActivity)getActivity()).showToast("Voltaje Vacío");
                     }
